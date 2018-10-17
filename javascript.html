@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #selected{
+            color:red;
+        }
+    .dark{
+        background-color: black;
+        color: white;
+    }
+    .dark #selected{
+        color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+        <input type="button" value="ondal" onclick="document.body.className='dark'">
+        <!-- docment :현재문서  body:현재문서의 body태그 -->
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #selected{
+            color:red;
+        }
+    .dark{
+        background-color: black;
+        color: white;
+    }
+    .dark #selected{
+        color: yellow;
+    }
+    </style>
+</head>
+
+<body class="dark">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+        <input type="button" value="ondal">
+</body>
+</html> -->
