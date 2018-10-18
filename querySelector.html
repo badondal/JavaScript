@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li> CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+            <li>HTML</li>
+            <li class="active">CSS</li>
+            <li>JavaScript</li>
+    </ol>
+<script>
+    var li = document.querySelector('li');
+        li.style.color='red';
+    var li = document.querySelector('.active');
+        li.style.color='blue';  
+        // querySelector 와 querySelectorAll 차이
+        // 하나의 값만 반환     여러개의 값을 반환
+    // var lis = document.querySelectorAll('li');
+    // for(var name in lis){
+    //     lis[name].style.color = 'blue';
+    // }
+        
+</script>
+</body>
+</html>
