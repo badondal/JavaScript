@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="target1"><span>Hello world</span></p>
+    <!--target1 과 target2 의 차이는 띄어쓰기지만
+    값을 찾을떄 결과는 다르게 나타남
+    -->
+    <p id="target2">
+        <span>Hello world</span>
+    </p>
+    <script>
+    var t1 = document.getElementById('target1').firstChild;
+    var t2 = document.getElementById('target2').firstChild;
+        
+    console.log(t1.firstChild.nodeValue);
+    try{
+        console.log(t2.firstChild.nodeValue);   
+    } catch(e){
+        console.log(e);
+    }
+    console.log(t2.nextSibling.firstChild.nodeValue);
+        
+    </script>
+</body>
+</html>

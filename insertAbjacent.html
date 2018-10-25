@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body id="start">
+    <ul id="target">
+            <li>CSS</li>
+    </ul>
+        <input type="button" onclick="beforebegin();" value="beforebegin" />
+        <input type="button" onclick="afterbegin();" value="afterbegin" />
+        <input type="button" onclick="beforeend();" value="beforeend" />
+        <input type="button" onclick="afterend();" value="afterend" />
+        <script>
+            function beforebegin(){
+                var target = document.getElementById('target');
+                target.insertAdjacentHTML('beforebegin','<h1>Client Side</h1>');
+            }
+            /*beforebegin id가target인 값 앞에*/
+            function afterbegin(){
+                var target = document.getElementById('target');
+                target.insertAdjacentHTML('afterbegin','<li>HTML</li>');
+            }
+            /*beforebegin id가target인 엘리먼트중 맨위에*/
+            function beforeend(){
+                var target = document.getElementById('target');
+                target.insertAdjacentHTML('beforeend','<li>JavaScript</li>');
+            }
+            /*beforebegin id가target인 엘리먼트중 맨밑에*/
+            function afterend(){
+                var target = document.getElementById('target');
+                target.insertAdjacentHTML('afterend','<h1>Server Side</h1>');
+            }
+            /*beforebegin id가target인 엘리먼트 밑에*/
+        </script>
+</body>
+</html>
