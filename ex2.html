@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        div{
+            border:50px solid #1065e6;
+            padding:50px;
+            margin:50px;
+        }
+        #target{
+            width:100px;
+            height:2000px;
+        }
+    </style>
+        <div>
+            <div id="target">
+                Coding
+            </div>
+        </div>
+     
+    <script>
+    var t = document.getElementById('target');
+    setInterval(function(){
+        /*setInterval 일정시간간격으로 호출됨*/
+        console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset);
+        console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset, 'document y:', t.getBoundingClientRect().top+window.pageYOffset);
+        /*window.pageYOffset  스크롤한 만큼의 정도*/
+    }, 1000)
+    </script>
+</body>
+</html>
