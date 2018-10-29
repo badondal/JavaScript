@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            html{border:5px solid red;padding:30px;}
+            body{border:5px solid green;padding:30px;}
+            fieldset{border:5px solid blue;padding:30px;}
+            input{border:5px solid black;padding:30px;}
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>event propagation</legend>
+            <input type="button" id="target" value="target">          
+        </fieldset>
+        <script>
+        function handler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+            // eventPhase capturing 1 bubleling 3 가장 말단의 엘리먼트에서의 핸들러인경우 1
+        }
+        function stophandler(event){
+            var phases = ['capturing', 'target', 'bubbling']
+            console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase-1]);
+            event.stophandler();
+            // eventPhase capturing 1 bubleling 3 가장 말단의 엘리먼트에서의 핸들러인경우 1
+        }
+        document.getElementById('target').addEventListener('click', handler, false);
+        // 3번째 인자값을 capturing = true bubleling = false 로 표현
+        // bubleling은 모든 브라우저에서 가능하나 capturing은 과거 버전에서 안되는것이 있음
+        document.querySelector('fieldset').addEventListener('click', handler, false);
+        document.querySelector('body').addEventListener('click', stophandler, false);
+        document.querySelector('html').addEventListener('click', handler, false);
+        </script>
+    </body>
+</html>

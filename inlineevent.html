@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="button" id="target" onclick="alert('Hello world, '+document.getElementById('target').value);" value="button" />
+    <!-- this 는 자기자신을 의미하고 이벤트의 소재를 파악하기에편함 
+    하지만 바람직한 형태라고 할수 없음-->
+    <input type="button" id="target" onclick="alert('Hello world, '+this.value); " value="button" />
+</body>
+</html>
