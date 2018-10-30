@@ -1,0 +1,41 @@
+<html>
+    
+    <body>
+        <p>time : <span id="time"></span></p>
+        <input type="button" id="execute" value="execute" />
+        <script>
+        document.querySelector('input').addEventListener('click', function(event){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './time.php');
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    document.querySelector('#time').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(); 
+        }); 
+        </script> 
+    </body>
+</html>
+
+<!-- 
+이벤트에 따라 다른핸들러를 실행할떄
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on({
+        'focus' : function(e){
+ 
+        }, 
+        'blur' : function(e){
+             
+        }
+    })
+</script>
+
+
+
+
+
+ -->

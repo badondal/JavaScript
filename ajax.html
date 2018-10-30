@@ -1,0 +1,35 @@
+<html>
+    
+    <body>
+            <input type="text" id="target" />
+            <p id="status"></p>
+            <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script>
+                $('#target').on('focus blur', function(e){
+                    $('#status').html(e.type);
+                })
+            </script>
+    </body>
+</html>
+
+<!-- 
+이벤트에 따라 다른핸들러를 실행할떄
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on({
+        'focus' : function(e){
+ 
+        }, 
+        'blur' : function(e){
+             
+        }
+    })
+</script>
+
+
+
+
+
+ -->
