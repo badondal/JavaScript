@@ -5,36 +5,78 @@
         <!doctype html>
 <html>
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.5">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-            body{
-                background-color: black;
+            .wrapper > div {
+            color: white;
             }
-        a{
-            color:white;
-            background-color: gray;
-            text-align: center;
-            border-radius: 3px;
-            font-size: 30px;
-            margin: 5px
-        }
-        /* @media (max-width:500px){
-            body{
-                background-color: red;
+            .wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4,1fr);
             }
-        } */
+            #all{
+                display: flex;
+                padding: 10px;
+                flex-direction:column;
+            }
+            #up{
+                flex-basis: 30%;
+            }
+            #down{
+                flex-basis: 70%;
+                
+            }
+            .func{
+              background: #a6a6a6;  
+              color: black !important;
+            }
+            .op{
+              background: #f19937;  
+            }
+            .num{
+              background: #333333;  
+            }
+            .cell{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 35px;
+               border-radius: 2.8rem;
+            }
     </style>
 </head>
 <body>
-    <a style="border-left: 1px;border-color: red;">7</a>
-    <a>8</a>  
-    <a>9</a><br>    
-    <a>4</a>
-    <a>5</a>  
-    <a>6</a><br>
-    <a>1</a>
-    <a>2</a>  
-    <a>3</a>  
+
+        <div id="all"  style="width:290px; height:552px; background-color:black">
+            <div id="up" style="height:150px; width:100%;"> 
+                <input type="text" value="0" readonly style="border: none; width:100%; height:100%; background-color:black; text-align:right;  color: white; font-size: 60px ">
+            </div>
+
+            <div id="down" class="wrapper">
+                    <div class="cell func" style="text-align:center;"><div>AC</div></div>
+                    <div class="cell func" style="text-align:center;"><div>+/-</div></div>
+                    <div class="cell func" style="text-align:center;"><div>%</div></div>
+                    <div class="cell op"  style="text-align:center;"><div>/</div></div>
+                    <div class="cell num" style="text-align:center;"><div>7</div></div>
+                    <div class="cell num" style="text-align:center;"><div>8</div></div>
+                    <div class="cell num" style="text-align:center;"><div>9</div></div>
+                    <div class="cell op"  style="text-align:center;"><div>*</div></div>
+                    <div class="cell num" style="text-align:center;"><div>4</div></div>
+                    <div class="cell num" style="text-align:center;"><div>5</div></div>
+                    <div class="cell num" style="text-align:center;"><div>6</div></div>
+                    <div class="cell op"  style="text-align:center;"><div>-</div></div>
+                    <div class="cell num" style="text-align:center;"><div>1</div></div>
+                    <div class="cell num" style="text-align:center;"><div>2</div></div>
+                    <div class="cell num" style="text-align:center;"><div>3</div></div>
+                    <div class="cell op"  style="text-align:center;"><div>+</div></div>
+                    <div class="cell num" style="text-align:left;"><div>0</div></div>
+                    <div class="cell num" style="text-align:left;"><div>0</div></div>
+                    <div class="cell num" style="text-align:center;"><div>.</div></div>
+                    <div class="cell op"  style="text-align:center;"><div>=</div></div>
+                </div>
+        </div>
+
     
 </body>
 </html>
