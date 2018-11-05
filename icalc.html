@@ -50,34 +50,60 @@
 
         <div id="all"  style="width:290px; height:552px; background-color:black">
             <div id="up" style="height:150px; width:100%;"> 
-                <input type="text" value="0" readonly style="border: none; width:100%; height:100%; background-color:black; text-align:right;  color: white; font-size: 60px ">
+                <input type="text" id="dis"  readonly style="border: none; width:100%; height:50%; background-color:black; text-align:right;  color: white; font-size: 60px ">
+                <input type="text" id="res" value="0" readonly style="border: none; width:100%; height:50%; background-color:black; text-align:right;  color: white; font-size: 60px ">
             </div>
 
             <div id="down" class="wrapper">
-                    <div class="cell func" style="text-align:center;"><div>AC</div></div>
-                    <div class="cell func" style="text-align:center;"><div>+/-</div></div>
-                    <div class="cell func" style="text-align:center;"><div>%</div></div>
-                    <div class="cell op"  style="text-align:center;"><div>/</div></div>
-                    <div class="cell num" style="text-align:center;"><div>7</div></div>
-                    <div class="cell num" style="text-align:center;"><div>8</div></div>
-                    <div class="cell num" style="text-align:center;"><div>9</div></div>
-                    <div class="cell op"  style="text-align:center;"><div>*</div></div>
-                    <div class="cell num" style="text-align:center;"><div>4</div></div>
-                    <div class="cell num" style="text-align:center;"><div>5</div></div>
-                    <div class="cell num" style="text-align:center;"><div>6</div></div>
-                    <div class="cell op"  style="text-align:center;"><div>-</div></div>
-                    <div class="cell num" style="text-align:center;"><div>1</div></div>
-                    <div class="cell num" style="text-align:center;"><div>2</div></div>
-                    <div class="cell num" style="text-align:center;"><div>3</div></div>
-                    <div class="cell op"  style="text-align:center;"><div>+</div></div>
-                    <div class="cell num" style="text-align:left;"><div>0</div></div>
-                    <div class="cell num" style="text-align:left;"><div>0</div></div>
-                    <div class="cell num" style="text-align:center;"><div>.</div></div>
-                    <div class="cell op"  style="text-align:center;"><div>=</div></div>
+                    <div class="cell func"><div>AC</div></div>
+                    <div class="cell func"><div>+/-</div></div>
+                    <div class="cell func"><div>%</div></div>
+                    <div class="cell op"><div>/</div></div>
+                    <div class="cell num"><div>7</div></div>
+                    <div class="cell num"><div>8</div></div>
+                    <div class="cell num"><div>9</div></div>
+                    <div class="cell op"><div>*</div></div>
+                    <div class="cell num"><div>4</div></div>
+                    <div class="cell num"><div>5</div></div>
+                    <div class="cell num"><div>6</div></div>
+                    <div class="cell op"><div>-</div></div>
+                    <div class="cell num"><div>1</div></div>
+                    <div class="cell num"><div>2</div></div>
+                    <div class="cell num"><div>3</div></div>
+                    <div class="cell op"><div>+</div></div>
+                    <div class="cell num"><div>0</div></div>
+                    <div class="cell num"><div>0</div></div>
+                    <div class="cell num"><div>.</div></div>
+                    <div class="cell op"><div>=</div></div>
                 </div>
         </div>
 
-    
+    <script>
+        var cal1 = document.getElementsByClassName('cell');
+        for (var i =0; i< cal1.length; i++) { 
+             cal1[i].addEventListener("click", (e)=>{
+                 if(e.target.firstChild.firstChild !== null){
+                     var num = document.getElementById('res');
+                     num.value = e.target.firstChild.firstChild.nodeValue;
+                     var a = num.value;
+                     console.log('ia=',a);
+                     a = a + e.target.firstChild.firstChild.nodeValue;
+                     var b = a.value;
+                     console.log(b);
+                 }
+                 else{
+                    var num = document.getElementById('res');
+                     num.value = e.target.firstChild.nodeValue;
+                     var a = num.value;
+                     console.log('ea=',a);  
+                 }
+                 
+                 var dis = document.getElementById('dis');
+                 
+                 })                 
+              }
+              
+    </script>
 </body>
 </html>
     </body>
