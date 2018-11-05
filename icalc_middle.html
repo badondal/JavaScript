@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    
+    <body>
+        <!doctype html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            .wrapper > div {
+            color: white;
+            }
+            .wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4,1fr);
+            }
+            #all{
+                display: flex;
+                padding: 10px;
+                flex-direction:column;
+            }
+            #up{
+                flex-basis: 30%;
+            }
+            #down{
+                flex-basis: 70%;
+                
+            }
+            .func{
+              background: #a6a6a6;  
+              color: black !important;
+            }
+            .op{
+              background: #f19937;  
+            }
+            .num{
+              background: #333333;  
+            }
+            .cell{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 35px;
+               border-radius: 2.8rem;
+            }
+    </style>
+</head>
+<body>
+
+        <div id="all"  style="width:290px; height:552px; background-color:black">
+            <div id="up" style="height:150px; width:100%;"> 
+                <input type="text" id="dis"  readonly style="border: none; width:100%; height:50%; background-color:black; text-align:right;  color: white; font-size: 60px ">
+                <input type="text" id="res" value="0" readonly style="border: none; width:100%; height:50%; background-color:black; text-align:right;  color: white; font-size: 60px ">
+            </div>
+
+            <div id="down" class="wrapper">
+                    <div class="cell func"><div>AC</div></div>
+                    <div class="cell func"><div>+/-</div></div>
+                    <div class="cell func"><div>%</div></div>
+                    <div class="cell op"><div>/</div></div>
+                    <div class="cell num"><div>7</div></div>
+                    <div class="cell num"><div>8</div></div>
+                    <div class="cell num"><div>9</div></div>
+                    <div class="cell op"><div>*</div></div>
+                    <div class="cell num"><div>4</div></div>
+                    <div class="cell num"><div>5</div></div>
+                    <div class="cell num"><div>6</div></div>
+                    <div class="cell op"><div>-</div></div>
+                    <div class="cell num"><div>1</div></div>
+                    <div class="cell num"><div>2</div></div>
+                    <div class="cell num"><div>3</div></div>
+                    <div class="cell op"><div>+</div></div>
+                    <div class="cell num"><div>0</div></div>
+                    <div class="cell num"><div>0</div></div>
+                    <div class="cell num"><div>.</div></div>
+                    <div class="cell op"><div>=</div></div>
+                </div>
+        </div>
+
+    <script>
+        var cal1 = document.getElementsByClassName('cell');
+        var num = document.getElementById('res');
+        for (var i =0; i< cal1.length; i++) { 
+             cal1[i].addEventListener("click", (e)=>{
+                var userVal = e.target.firstChild.firstChild; 
+                if(userVal !== null){
+                    userVal = userVal.nodeValue; 
+                }
+                else{
+                    userVal = e.target.firstChild.nodeValue; 
+                }
+                    
+                if(num.value > 0){
+                    num.value = num.value + userVal;
+                }
+                else{
+                    num.value = userVal;
+                }                 
+            })                 
+        }
+              
+    </script>
+</body>
+</html>
+    </body>
+</html>
